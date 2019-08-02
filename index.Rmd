@@ -1,0 +1,97 @@
+---
+title: "Xaringan²"
+subtitle: "R x Markdown x Github"
+author: "Sylvain Lapoix, Datactivist"
+date: "Summer 2019"
+output:
+  SlidesDatactivist::moon_reader:
+    css: [default, datactivist, datactivist-fonts]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+params:
+  event: The Xaringan of the Xaringans
+  slug: xaringan_squared
+
+---
+
+layout: true
+  
+
+`r paste0("<div class='my-footer'><span>", params$event, "</span> <center><div class=logo><img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'></center></span></div>")`
+
+---
+
+class: center, middle
+
+Ces slides en ligne : `r paste0("https://sylvainlapoix.github.io/", params$slug)`
+
+Sources : `r paste0("https://github.com/sylvainlapoix/", params$slug)`
+
+
+Of course, les productions de Datactivist sont librement réutilisables selon les termes de la licence [Creative Commons 4.0 BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode.fr).
+
+<BR>
+<BR>
+
+![](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
+---
+
+background-image: url(https://media.giphy.com/media/26gJztRCkcW8meI3C/giphy.gif)
+class: center, top, inverse
+# 0. Choisir Xaringan ?
+
+
+---
+
+### Intro
+.red[[Xaringan](https://github.com/yihui/xaringan)] est un package R développé par Yihui Xie permettant d'utiliser les fonctionnalités de l'outil de présentation Javascript [remark.js](https://remarkjs.com/) dans R et d'y ajouter les spécificités de ce langage (sortie console, dataviz, etc.). Son nom est inspiré de celui [d'un dōjutsu de Naruto](https://naruto.fandom.com/fr/wiki/Sharingan) disposant de deux capacités :
+1. *"l'oeil de la perspicacité"* ;
+2. *"l'oeil de l'hypnose"*.
+
+Je ne vous souhaite rien de moins avec vos prez.
+
+#### Atouts (par rapport à un outil de prez classique)
+* lisibilité : Markdown + R (et un tout petit peu de CSS si on veut) ;
+* versatilité : texte, graph, images, URLs, code R, HTML, Javascript ou CSS en entrée et, en sortie, HTML, PDF, Bar Mitsvah ... ;
+* reproductibilité : chaque prez repose sur un simple .Rmd accompagné de fichiers sources permettant de reproduire, réutiliser et adapter.
+
+--
+
+**Et on peut y mettre des GIFs.**
+
+---
+
+background-image: url(https://media.giphy.com/media/l0Hlxht5Nq8683Sz6/giphy.gif)
+class: center, top, inverse
+
+# 1. Créer un projet
+
+
+
+---
+
+## Installer les outils nécessaires
+
+L'interface la plus naturelle pour utiliser Xaringan est [Rstudio](https://www.rstudio.com/) (qui permet notamment de gérer les fichiers et le git).
+
+Xaringan dépend de plusieurs packages courants (Rcpp, markdown, stringr ou encore htmltools). Si vous avez installé le tidyverse, vous en êtes déjà équipé·e·s (mais bon [installez-le quand même](https://www.tidyverse.org/), ça ne pourra que vous servir).
+
+Possible prérequis : Xaringan peut nécessiter [LaTeX](https://www.latex-project.org/get/). Une petite vérification peut être utile, ainsi qu'une install de tinytex (package créé par ... Yihui).
+
+Une fois ces précautions prises, vous pouvez lancer l'installation de Xaringan lui-même via dev.tools (le package n'étant pas encore intégré aux dépôts officiels) :
+
+```r
+install.packages('xaringan')
+```
+
+---
+
+
+background-image: url(https://media.giphy.com/media/8Hg2FpkTYkdJC/giphy.gif)
+class: center, top, inverse
+
+# Patience les chatons, ça arrive
+

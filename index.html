@@ -23,7 +23,7 @@ class: center, middle, inverse, title-slide
 layout: true
   
 
-&lt;div class='my-footer'&gt;&lt;span&gt;The Xaringan of the Xaringans&lt;/span&gt; &lt;center&gt;&lt;div class=logo&gt;&lt;img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'&gt;&lt;/center&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class='my-footer'&gt;&lt;span&gt;Un Xaringan sur Xaringan&lt;/span&gt; &lt;center&gt;&lt;div class=logo&gt;&lt;img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'&gt;&lt;/center&gt;&lt;/span&gt;&lt;/div&gt;
 
 ---
 
@@ -70,13 +70,11 @@ Je ne vous souhaite rien de moins avec vos prez.
 background-image: url(https://media.giphy.com/media/l0Hlxht5Nq8683Sz6/giphy.gif)
 class: center, top, inverse
 
-# 1. Créer un projet
-
-
+# 1. Créer une présentation
 
 ---
 
-## Installer les outils nécessaires
+### Installer les outils nécessaires
 
 L'interface la plus naturelle pour utiliser Xaringan est [Rstudio](https://www.rstudio.com/) (qui permet notamment de gérer les fichiers et le git).
 
@@ -89,6 +87,118 @@ Une fois ces précautions prises, vous pouvez lancer l'installation de Xaringan 
 ```r
 install.packages('xaringan')
 ```
+
+--
+
+Au passage, vérifiez que votre R est à jour en regardant la version avec la fonction du même nom : : `version`.
+
+---
+
+### Créer un nouveau projet
+
+Dans le menu "File", sélectionnez *New project* et les options suivantes : New Directory / Empty project.
+
+Vous serez alors invité·e·s à nommer le projet et choisir son emplacement :
+* choisissez un emplacement pratique et logique (i.e. : que vous retrouverez facilement) ;
+* donnez à votre projet un nom compact sans caractère spéciaux, accents ou espace (préférez les "-" et "_") ;
+* cochez la case "Create a git repository", ça vous servira plus tard.
+
+--
+
+Vous devriez alors avoir dans votre dossier :
+* **un fichier .Rproj** : qui contient les paramètres de votre projet ;
+* **un fichier .gitignore** : dont nous parlerons plus tard.
+* **un fichier .Rhistory** : qui apparaîtra dès que vous faîtes un truc et vous sert à garder l'historique des commandes utilisées.
+
+
+---
+
+### Créer un nouveau Rmd
+
+Vous pouvez maintenant créer votre fichier source en R Markdown (abrégé Rmd) : dans le menu "File", sélectionnez *New file* puis *R Markdown*.
+
+Ici, les options qui nous intéressent sont dans les templates : **"Ninja Presentation"** et **"Slides Datactivist"** (le thème Xaringan *parfum Datactivist* concocté par Joël) permettront de créer le fichier source de notre présentation :
+
+![](./img/rstudio_newfile_rmd.png)
+
+---
+
+### Le fichier source
+
+Le fichier source est composé de plusieurs partie et écrit suivant une grammaire propre mais très simple.
+
+.pull-left[
+Au tout début se trouve **le YAML**, codé dans [le langage du même nom](https://fr.wikipedia.org/wiki/YAML), qui paramètre le document.
+
+C'est grâce au YAML que nous pourrons modifier l'entête mais aussi les pieds de page, appeler d'autres polices, etc. Il est délimité en haut et en bas par un triple dash bleu :
+
+![](img/rmd-yaml.png)
+]
+
+.pull-right[
+![](./img/rmd_markdown.png)
+
+Tout le reste du document est constitué par le contenu de la présentation format en Rmd, un format Markdown adapté à R.
+
+Le texte est mis en forme avec du md, les contenus (images, liens hypertexte, gif et même cartes interactifs) insérés via des fonctions markdown ... tout se fait en texte !
+
+Les slides sont délimités par des triples dash jaunes.
+]
+
+
+---
+
+### Compiler votre présentation
+
+Pour "voir" le résultat, vous devez *compiler* votre présentation. C'est-à-dire lancer le processus d'interprétation de votre fichier Rmd en fichier de présentation HTML. Pour cela, il vous suffit de cliquer sur le bouton **Knit** dans la barre supérieure de votre document.
+
+Un aperçu apparaît à droite dans le "Viewer", où vous pouvez naviguer 😎 :
+
+![](./img/compile.png)
+
+
+---
+
+background-image: url(https://media.giphy.com/media/CovFciJgWyxUs/giphy.gif)
+class: center, top, inverse
+
+# 2. Mettre sa présentation en forme
+
+---
+
+background-image: url()
+class: center, top, inverse
+
+# 3. Ajouter du contenu
+
+---
+
+background-image: url()
+class: center, top, inverse
+
+# 4. Rendre ses prezs réplicables
+
+---
+
+background-image: url()
+class: center, top, inverse
+
+# 5. GIT it to the next level
+
+---
+
+background-image: url(https://media.giphy.com/media/J3Ao5L98X8oms/giphy.gif)
+class: center, top, inverse
+
+# 6. Fonctionnalités avancées
+
+---
+
+background-image: url()
+class: center, top, inverse
+
+# 6. Adapter et créer son propre thème
+
 
 ---
 

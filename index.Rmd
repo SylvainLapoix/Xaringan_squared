@@ -1,8 +1,8 @@
 ---
 title: "Xaringan²"
 subtitle: "R x Markdown x Github"
-author: "Sylvain Lapoix, Datactivist"
-date: "Summer 2019"
+author: "Sylvain Lapoix - Datactivist"
+date: "Estate 2019"
 output:
   SlidesDatactivist::moon_reader:
     css: [default, datactivist, datactivist-fonts]

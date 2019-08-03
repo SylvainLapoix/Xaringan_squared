@@ -48,8 +48,8 @@ class: center, top, inverse
 
 ### Intro
 .red[[Xaringan](https://github.com/yihui/xaringan)] est un package R développé par Yihui Xie permettant d'utiliser les fonctionnalités de l'outil de présentation Javascript [remark.js](https://remarkjs.com/) dans R et d'y ajouter les spécificités de ce langage (sortie console, dataviz, etc.). Son nom est inspiré de celui [d'un dōjutsu de Naruto](https://naruto.fandom.com/fr/wiki/Sharingan) disposant de deux capacités :
-1. *"l'oeil de la perspicacité"* ;
-2. *"l'oeil de l'hypnose"*.
+1. *"l'œil de la perspicacité"* ;
+2. *"l'œil de l'hypnose"*.
 
 Je ne vous souhaite rien de moins avec vos prez.
 

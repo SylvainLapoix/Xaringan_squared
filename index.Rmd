@@ -11,6 +11,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      beforeInit: "macros.js"
 params:
   event: Un Xaringan sur Xaringan
   slug: xaringan_squared
@@ -48,8 +49,8 @@ class: center, top, inverse
 
 ### Intro
 .red[[Xaringan](https://github.com/yihui/xaringan)] est un package R développé par Yihui Xie permettant d'utiliser les fonctionnalités de l'outil de présentation Javascript [remark.js](https://remarkjs.com/) dans R et d'y ajouter les spécificités de ce langage (sortie console, dataviz, etc.). Son nom est inspiré de celui [d'un dōjutsu de Naruto](https://naruto.fandom.com/fr/wiki/Sharingan) disposant de deux capacités :
-1. *"l'oeil de la perspicacité"* ;
-2. *"l'oeil de l'hypnose"*.
+1. *"l'œil de la perspicacité"* ;
+2. *"l'œil de l'hypnose"*.
 
 Je ne vous souhaite rien de moins avec vos prez.
 
@@ -77,17 +78,22 @@ L'interface la plus naturelle pour utiliser Xaringan est [Rstudio](https://www.r
 
 Xaringan dépend de plusieurs packages courants (Rcpp, markdown, stringr ou encore htmltools). Si vous avez installé le tidyverse, vous en êtes déjà équipé·e·s (mais bon [installez-le quand même](https://www.tidyverse.org/), ça ne pourra que vous servir).
 
-Possible prérequis : Xaringan peut nécessiter [LaTeX](https://www.latex-project.org/get/). Une petite vérification peut être utile, ainsi qu'une install de tinytex (package créé par ... Yihui).
+Une fois ces précautions prises, vous pouvez lancer l'installation de Xaringan lui-même  :
 
-Une fois ces précautions prises, vous pouvez lancer l'installation de Xaringan lui-même via dev.tools (le package n'étant pas encore intégré aux dépôts officiels) :
-
-```r
+```{r eval=FALSE}
 install.packages('xaringan')
 ```
 
+Encore mieux, vous pouvez installer à la place le package permettant de faire des slides chartées Datactivist :
+
+```{r eval=FALSE}
+devtools::install_github("datactivist/slides_datactivist")
+```
+
+
 --
 
-Au passage, vérifiez que votre R est à jour en regardant la version avec la fonction du même nom : : `version`.
+Au passage, vérifiez que votre R est à jour en regardant la version avec la fonction  : `R.version()`. La version la plus récente à date est la 3.6.1.
 
 ---
 
@@ -114,7 +120,7 @@ Vous devriez alors avoir dans votre dossier :
 
 Vous pouvez maintenant créer votre fichier source en R Markdown (abrégé Rmd) : dans le menu "File", sélectionnez *New file* puis *R Markdown*.
 
-Ici, les options qui nous intéressent sont dans les templates : **"Ninja Presentation"** et **"Slides Datactivist"** (le thème Xaringan *parfum Datactivist* concocté par Joël) permettront de créer le fichier source de notre présentation :
+Ici, les options qui nous intéressent sont dans les templates : **"Ninja Presentation"** ou **"Slides Datactivist"** (le thème Xaringan *parfum Datactivist* concocté par Joël) permettront de créer le fichier source de notre présentation :
 
 ![](./img/rstudio_newfile_rmd.png)
 
@@ -122,26 +128,23 @@ Ici, les options qui nous intéressent sont dans les templates : **"Ninja Presen
 
 ### Le fichier source
 
-Le fichier source est composé de plusieurs partie et écrit suivant une grammaire propre mais très simple.
+Le fichier source est composé de plusieurs parties et écrit suivant une grammaire propre mais très simple.
 
-.pull-left[
 Au tout début se trouve **le YAML**, codé dans [le langage du même nom](https://fr.wikipedia.org/wiki/YAML), qui paramètre le document.
 
 C'est grâce au YAML que nous pourrons modifier l'entête mais aussi les pieds de page, appeler d'autres polices, etc. Il est délimité en haut et en bas par un triple dash bleu :
 
-![](img/rmd-yaml.png)
-]
+.center[![:largeur 60%](img/rmd-yaml.png)]
+---
+### Le fichier source
 
-.pull-right[
-![](./img/rmd_markdown.png)
+.center[![:largeur 80%](./img/rmd_markdown.png)]
 
 Tout le reste du document est constitué par le contenu de la présentation format en Rmd, un format Markdown adapté à R.
 
 Le texte est mis en forme avec du md, les contenus (images, liens hypertexte, gif et même cartes interactifs) insérés via des fonctions markdown ... tout se fait en texte !
 
 Les slides sont délimités par des triples dash jaunes.
-]
-
 
 ---
 
@@ -151,7 +154,7 @@ Pour "voir" le résultat, vous devez *compiler* votre présentation. C'est-à-di
 
 Un aperçu apparaît à droite dans le "Viewer", où vous pouvez naviguer `r emo::ji("sunglasses")` :
 
-![](./img/compile.png)
+.center[![:largeur 80%](./img/compile.png)]
 
 
 ---

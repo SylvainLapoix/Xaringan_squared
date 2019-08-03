@@ -154,7 +154,7 @@ Pour "voir" le résultat, vous devez *compiler* votre présentation. C'est-à-di
 
 Un aperçu apparaît à droite dans le "Viewer", où vous pouvez naviguer `r emo::ji("sunglasses")` :
 
-![](./img/compile.png)
+.center[![:largeur 80%](./img/compile.png)]
 
 
 ---

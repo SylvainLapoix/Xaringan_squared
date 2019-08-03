@@ -11,6 +11,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      beforeInit: "macros.js"
 params:
   event: Un Xaringan sur Xaringan
   slug: xaringan_squared
@@ -137,7 +138,7 @@ C'est grâce au YAML que nous pourrons modifier l'entête mais aussi les pieds d
 ---
 ### Le fichier source
 
-![](./img/rmd_markdown.png)
+.center[![:largeur 80%](./img/rmd_markdown.png)]
 
 Tout le reste du document est constitué par le contenu de la présentation format en Rmd, un format Markdown adapté à R.
 

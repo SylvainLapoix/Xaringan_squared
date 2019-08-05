@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html>
   <head>
     <title>Xaringan²</title>
-<<<<<<< HEAD
     <meta charset="utf-8">
     <meta name="author" content="Sylvain Lapoix - Datactivist" />
-=======
-    <meta charset="utf-8" />
-    <meta name="author" content="Sylvain Lapoix, Datactivist" />
->>>>>>> 7a93a65f9f934877b647a523466936632125f0c2
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/datactivist.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/datactivist-fonts.css" rel="stylesheet" />
@@ -135,7 +130,7 @@ Ici, les options qui nous intéressent sont dans les templates : **"Ninja Presen
 
 ---
 
-### Le fichier source
+### Le fichier source 1/2
 
 Le fichier source est composé de plusieurs parties et écrit suivant une grammaire propre mais très simple.
 
@@ -144,8 +139,10 @@ Au tout début se trouve **le YAML**, codé dans [le langage du même nom](https
 C'est grâce au YAML que nous pourrons modifier l'entête mais aussi les pieds de page, appeler d'autres polices, etc. Il est délimité en haut et en bas par un triple dash bleu :
 
 .center[![:largeur 60%](img/rmd-yaml.png)]
+
 ---
-### Le fichier source
+
+### Le fichier source 2/2
 
 .center[![:largeur 80%](./img/rmd_markdown.png)]
 
@@ -175,10 +172,120 @@ class: center, top, inverse
 
 ---
 
+## La base : le markdown
+
+Comme expliqué plus tôt, Xaringan est basé sur un document source en texte simple formaté en **Markdown**. Le markdown a de nombreux avantages :
+* **lisible** : les "balises" md sont courtes et faciles à lire, ce qui permet de les ajouter et corriger rapidement. A fortiori avec la coloration syntaxique de Rstudio ou Sublime Text ;
+* **compact** : la plupart des options consistent en une poignée de caractères. En dehors des graisses et itals, la plupart des "balises" n'ont pas besoin d'être fermées... Le texte mis en forme est donc aisément lisible même formaté ;
+* **limitées** : le md offre des options limitées mais pratiques, ce qui évite de se perdre dans d'interminables cheatsheets.
+
+L'intégalité des fonctions tient sur une page :
+* Github propose [une intro](https://help.github.com/en/articles/basic-writing-and-formatting-syntax) et [un doc de référence](https://guides.github.com/features/mastering-markdown/) ;
+* Yihui, auteur du package Xaringan, a fait un [bookdown](https://bookdown.org/) complet sur le sujet : "[A definitive guide](https://bookdown.org/yihui/rmarkdown)"
+
+---
+
+## Mise en forme du texte
+
+La **mise en forme** du *texte* est ~~foutrement~~ __extrêmement__ simple puisqu'elle repose sur :
+* une poignée de signe : *, _, #, ~ et &gt; ;
+* une syntaxe minimale ;
+* une hiérarchie spatiale intuitive.
+
+--
+
+Le paragraphe ci-dessus a ainsi été écrit avec le texte suivant :
+```
+ La **mise en forme** du *texte* est ~~foutrement~~ __extrêmement__ simple puisqu'elle repose sur :
+ * une poignée de signe : *, _, #, ~ et &gt; ;
+ * une syntaxe minimale ;
+ * une hiérarchie spatiale intuitive.
+
+```
+
+Prenons les éléments un par un.
+
+---
+
+### Formater le texte simple
+
+Le formatage simple fonctionne sur un principe de balise : des signes ajoutés avant et après le texte que l'ont souhaite modifier (comme du HTML mais en plus simple).
+
+Les options disponibles sont les suivantes :
+* pour mettre en *italique*, vous pouvez entourer l'expression soit d'étoiles `*comme ça*`, soit d'underscore simple `_ainsi_` ;
+* pour mettre en **gras**, il faut doubler : deux étoiles `**comme ça**` ou deux underscore `__ainsi__` ;
+* vous pouvez aussi ~~rayer~~ en utilisant des doubles tildes, `~~de cette manière~~` ;
+* hélas, rien pour souligner.
+
+.center[
+### .red[Attention] ⚠️
+Le signe doit toucher le premier et le dernier signe de la chaîne de caractère. Si vous mettez un espace, cela ne fonctionnera pas (ou activera une autre fonction).
+]
+
+---
+
+### La titraille et les listes
+
+Les titres sont ajoutés via la balise "#" : chaque niveau de titre correspond à un nombre de #. Les balises titres se mettent en début de ligne et sont séparées du texte par un espace :
+
+```
+# Titre 1 : le·a boss des titres
+## Titre 2 : le·a DG des titres
+### Titre 3 : le·a chef·fe de service des titres
+#### Titre 4 : le·a chef·fe d'équipe des titres
+##### Titre 5 : l'intérimaire des titres.
+```
+
+Pour les listes, c'est le même principe : les listes non ordonnées sont initées en plaçant une "*" en début de ligne puis un espace (sinon, c'est un ital). Les listes ordonnées sont initiées en plaçant un chiffre suivant d'un point et d'un espace.
+
+```
+ * élément non ordonné
+ * autre élément non ordonné
+
+1. 1er élément
+2. 2è élément.
+```
+
+
+---
+
+### Ajouter du texte spécial
+
+Vous pouvez également
+
+liens hypertexte
+inline code
+blockcode
+quote
+
+---
+
+## Mise en forme des slides
+
+couper les slides
+pull-left
+styling par page
+
+---
+
+## Bonus made in Datactivist
+
+.red
+reduce
+
+---
+
 background-image: url(https://media.giphy.com/media/p668TRpM2r8bK/giphy.gif)
 class: center, top, inverse
 
 # 3. Ajouter du contenu
+
+---
+
+images (via URL)
+fonctions R
+dataviz
+GIF
 
 ---
 
@@ -189,10 +296,25 @@ class: center, top, inverse
 
 ---
 
+organisation des fichiers
+templates
+variables
+
+---
+
 background-image: url(https://media.giphy.com/media/905GG7MjDw61q/giphy.gif)
 class: center, top, inverse
 
 # 5. GIT it to the next level
+
+---
+
+* rudiments GIT
+* remote
+* initial pull
+* add / commit / push
+* plus avancé
+
 
 ---
 
@@ -217,7 +339,6 @@ class: center, top, inverse
 
 # Patience les chatons, ça arrive
     </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macros.js"></script>
 <script>var slideshow = remark.create({
@@ -228,79 +349,26 @@ class: center, top, inverse
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
 })();</script>
 
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
   }
-})();
-</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
+});
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
